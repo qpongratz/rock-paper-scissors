@@ -74,6 +74,17 @@
         }
 
     }   
+
+    function evaluateEndgame(playerScore, compScore){
+        if (playerScore > compScore){
+            return("You've won the game! Reload to prove this wasn't a fluke.");
+        }else if (compScore > playerScore){
+            return("You've lost the game. Reload to salvage your dignity.");
+        }else{
+            return("You've tied. Reload to achieve catharsis");
+        }
+    }
+
     //Play a game x rounds long.
     function game(x){
         for (i = 0; i < x; i++) {
@@ -83,13 +94,7 @@
             console.log("Your Score: " + playerScore);
             console.log("Computer's Score: " + compScore);
         }
-        if (playerScore > compScore){
-            console.log("You've won the game! Reload to prove this wasn't a fluke.")
-        }else if (compScore > playerScore){
-            console.log("You've lost the game. Reload to salvage your dignity.")
-        }else{
-            console.log("You've tied. Reload to achieve catharsis")
-        }
+        console.log(evaluateEndgame(playerScore, compScore));
     }
 
     let playerScore = 0;
