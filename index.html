@@ -87,8 +87,8 @@
     }
 
     //Play a game x rounds long.
-    function game(x){
-        for (i = 0; i < x; i++) {
+    function game(numberOfRounds){
+        for (i = 0; i < numberOfRounds; i++) {
             const computerSelection = computerPlay();
             const playerSelection = window.prompt("Select Rock, Paper, or Scissors" , "Rock")
             console.log(playRound(playerSelection, computerSelection));
