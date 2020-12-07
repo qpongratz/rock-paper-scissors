@@ -20,14 +20,21 @@
         }
         return (selection);
     }
+
+    //Makes the player input conform to the same upper and lower cases
+    //that I chose for the computerPlay outputs. Could just make computer
+    //all uppercase since the strings for win and lose are hard-coded now. 
     function processString(str){
         firstLetter = str.charAt(0)
         return (firstLetter.toUpperCase() + str.slice(1).toLowerCase());
     }
     
-    const playerSelection = "Rock";
+    const playerSelection = "Scissors";
     
     const computerSelection = computerPlay();
+
+    let playerScore = 0;
+    let compScore = 0;
     
     function playRound(playerSelection, computerSelection){
         playerSelection = processString(playerSelection);
@@ -36,24 +43,56 @@
         }
         switch (playerSelection){
             case "Rock":
-                return(computerSelection === "Paper" ? "You Lose! Paper beats Rock." : "You Win! Rock beats Scissors.");
+                if (computerSelection === "Paper"){
+                    result = "You Lose! Paper covers Rock.";
+                    compScore +=1;
+                }else{
+                    result = "You Win! Rock smashes Scissors."
+                    playerScore += 1;
+                }
+                return result
                 break;
         }
         switch (playerSelection){
             case "Paper":
-                return(computerSelection === "Scissors" ? "You Lose! Scissors beats Paper." : "You Win! Paper beats Rock.");
+                if (computerSelection === "Scissors"){
+                        result = "You Lose! Scissors cut Paper.";
+                        compScore +=1;
+                }else{
+                        result = "You Win! Paper covers Rock."
+                        playerScore += 1;
+                }
+                return result
                 break;
         }
         switch (playerSelection){
             case "Scissors":
-                return(computerSelection === "Rock" ? "You Lose! Rock beats Scissors." : "You Win! Scissors beats Paper.");
+                if (computerSelection === "Rock"){
+                        result = "You Lose! Rock smashes Scissors.";
+                        compScore +=1;
+                }else{
+                        result = "You Win! Scissors cut Paper."
+                        playerScore += 1;
+                }
+                return result
                 break;
         }
 
     }
+    //Play a game x rounds long.
+    //fucntion game(x){
+    //    for (i = 0; i < x; i++) {
+    //        const computerSelection = computerPlay()
+    //        const playerSelection = 
+   //         playRound(playerSelection, computerSelection)
+    //    }
+   // }
     
-    console.log("Player Selection: " + playerSelection)
-    console.log("Computer Selection: " + computerSelection)
+    //Console logs for testing.
+    console.log("Player Selection: " + playerSelection);
+    console.log("Computer Selection: " + computerSelection);
     console.log(playRound(playerSelection, computerSelection));
+    console.log(playerScore);
+    console.log(compScore);
 
 </script>
