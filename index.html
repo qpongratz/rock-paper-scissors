@@ -46,8 +46,6 @@
                 }
                 return result
                 break;
-        }
-        switch (playerSelection){
             case "Paper":
                 if (computerSelection === "Scissors"){
                         result = "You Lose! Scissors cut Paper.";
@@ -58,8 +56,6 @@
                 }
                 return result
                 break;
-        }
-        switch (playerSelection){
             case "Scissors":
                 if (computerSelection === "Rock"){
                         result = "You Lose! Rock smashes Scissors.";
@@ -70,9 +66,14 @@
                 }
                 return result
                 break;
+            default:
+                result = "Fowl! Not a valid choice. Computer gets penalty point.";
+                compScore += 1;
+                return result;
+                break;
         }
 
-    }
+    }   
     //Play a game x rounds long.
     function game(x){
         for (i = 0; i < x; i++) {
@@ -94,12 +95,4 @@
     let playerScore = 0;
     let compScore = 0;    
     game(5);
-
-    //Console logs for testing.
-    //console.log("Player Selection: " + playerSelection);
-    //console.log("Computer Selection: " + computerSelection);
-    //console.log(playRound(playerSelection, computerSelection));
-    //console.log(playerScore);
-    //console.log(compScore);
-
 </script>
