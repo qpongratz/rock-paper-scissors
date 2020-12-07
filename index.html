@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<script>
+    //Function to get computer's selection
+    function computerPlay(){
+        rnd = Math.floor(Math.random()*3);
+        switch (rnd){
+            case 0:
+               selection = "Rock";
+               break;
+            case 1:
+                selection = "Paper";
+                break;
+            case 2: 
+                selection = "Scissors";
+                break; 
+        }
+        console.log(rnd);
+        return (selection);
+    }
+    
+    console.log(computerPlay());
+
+</script>
