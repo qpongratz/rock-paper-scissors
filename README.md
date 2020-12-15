@@ -12,4 +12,4 @@ Learned:
     
     More familiarity with Javascript code.
 
-    
+Updated Goal: Learn how to maniplulate the html with javascript by creating a front end to actually play Rock-Paper-Scissors not in the console.
