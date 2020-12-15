@@ -34,21 +34,21 @@ function playRound(playerSelection, computerSelection){
             break;
         case "Paper":
             if (computerSelection === "Scissors"){
-                    result = "You Lose! Scissors cut Paper.";
-                    compScore +=1;
+                result = "You Lose! Scissors cut Paper.";
+                compScore +=1;
             }else{
-                    result = "You Win! Paper covers Rock."
-                    playerScore += 1;
+                result = "You Win! Paper covers Rock."
+                playerScore += 1;
             }
             return result
             break;
         case "Scissors":
             if (computerSelection === "Rock"){
-                    result = "You Lose! Rock smashes Scissors.";
-                    compScore +=1;
+                result = "You Lose! Rock smashes Scissors.";
+                compScore +=1;
             }else{
-                    result = "You Win! Scissors cut Paper."
-                    playerScore += 1;
+                result = "You Win! Scissors cut Paper."
+                playerScore += 1;
             }
             return result
             break;
@@ -74,7 +74,6 @@ function updateDisplayedScore() {
     compScoreDiv.textContent = `Computer's Score: ${compScore}`;
 }
 
-//Compares player and computer score to select a final message.
 function evaluateEndgame(){
     if (playerScore >= 5){
         endgame.textContent = "You've won the game! Reload to prove this wasn't a fluke.";
@@ -85,11 +84,14 @@ function evaluateEndgame(){
     }
 }
 
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        resultsDiv.textContent = (playRound(button.id, computerPlay()));
-        updateDisplayedScore();
-        evaluateEndgame();
+        if (playerScore < 5 && compScore < 5) {
+            resultsDiv.textContent = (playRound(button.id, computerPlay()));
+            updateDisplayedScore();
+            evaluateEndgame();
+        }        
     }); 
 });
     
