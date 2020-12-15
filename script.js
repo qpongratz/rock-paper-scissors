@@ -86,15 +86,21 @@ const playerScoreDiv = document.querySelector('#playerScore');
 const compScoreDiv = document.querySelector('#compScore');
 const resultsDiv = document.querySelector('.results');
 
-playerScoreDiv.textContent = `Your Score: ${playerScore}`;
-compScoreDiv.textContent = `Computer's Score: ${compScore}`;
+updateScore();
+
+
+
+function updateScore() {
+    playerScoreDiv.textContent = `Your Score: ${playerScore}`;
+    compScoreDiv.textContent = `Computer's Score: ${compScore}`;
+}
+
 
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         resultsDiv.textContent = (playRound(button.id, computerPlay()));
-        playerScoreDiv.textContent = `Your Score: ${playerScore}`;
-        compScoreDiv.textContent = `Computer's Score: ${compScore}`;
+        updateScore();
     }); 
 });
     
