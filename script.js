@@ -63,11 +63,6 @@ function playRound(playerSelection, computerSelection){
             }
             return result
             break;
-        default:
-            result = "Fowl! Not a valid choice. Computer gets penalty point.";
-            compScore += 1;
-            return result;
-            break;
     }
 
 }   
@@ -83,19 +78,26 @@ function evaluateEndgame(playerScore, compScore){
     }
 }
 
-const buttons = document.querySelectorAll('button');
+let playerScore = 0;
+let compScore = 0;
 
+const buttons = document.querySelectorAll('button');
+const playerScoreDiv = document.querySelector('#playerScore');
+const compScoreDiv = document.querySelector('#compScore');
+const resultsDiv = document.querySelector('.results');
+
+playerScoreDiv.textContent = `Your Score: ${playerScore}`;
+compScoreDiv.textContent = `Computer's Score: ${compScore}`;
 
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(button.id, computerPlay()));
-        console.log(playerScore);
-        console.log(compScore);
+        resultsDiv.textContent = (playRound(button.id, computerPlay()));
+        playerScoreDiv.textContent = `Your Score: ${playerScore}`;
+        compScoreDiv.textContent = `Computer's Score: ${compScore}`;
     }); 
 });
     
 
 
-let playerScore = 0;
-let compScore = 0;    
+   
