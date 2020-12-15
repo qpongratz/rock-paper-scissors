@@ -56,16 +56,7 @@ function playRound(playerSelection, computerSelection){
 
 }   
 
-//Compares player and computer score to select a final message.
-function evaluateEndgame(playerScore, compScore){
-    if (playerScore > compScore){
-        return("You've won the game! Reload to prove this wasn't a fluke.");
-    }else if (compScore > playerScore){
-        return("You've lost the game. Reload to salvage your dignity.");
-    }else{
-        return("You've tied. Reload to achieve catharsis");
-    }
-}
+
 
 let playerScore = 0;
 let compScore = 0;
@@ -74,6 +65,7 @@ const buttons = document.querySelectorAll('button');
 const playerScoreDiv = document.querySelector('#playerScore');
 const compScoreDiv = document.querySelector('#compScore');
 const resultsDiv = document.querySelector('.results');
+const endgame = document.querySelector('.endgame');
 
 updateDisplayedScore();
 
@@ -82,12 +74,22 @@ function updateDisplayedScore() {
     compScoreDiv.textContent = `Computer's Score: ${compScore}`;
 }
 
-
+//Compares player and computer score to select a final message.
+function evaluateEndgame(){
+    if (playerScore >= 5){
+        endgame.textContent = "You've won the game! Reload to prove this wasn't a fluke.";
+    }else if (compScore >= 5){
+        endgame.textContent = "You've lost the game. Reload to salvage your dignity."
+    }else{
+        return;
+    }
+}
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         resultsDiv.textContent = (playRound(button.id, computerPlay()));
         updateDisplayedScore();
+        evaluateEndgame();
     }); 
 });
     
