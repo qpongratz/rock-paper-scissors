@@ -26,7 +26,9 @@ function processString(str){
 
 //Compares selections to output a result and modify scores.
 function playRound(playerSelection, computerSelection){
-    playerSelection = processString(playerSelection);
+    //playerSelection = processString(playerSelection);
+    console.log(playerSelection);
+    console.log(computerSelection);
     if (playerSelection === computerSelection){
         return `Tie! You both selected ${playerSelection}.`
     }
@@ -81,18 +83,19 @@ function evaluateEndgame(playerScore, compScore){
     }
 }
 
-//Play a game x rounds long.
-function game(numberOfRounds){
-    for (i = 0; i < numberOfRounds; i++) {
-        const computerSelection = computerPlay();
-        const playerSelection = window.prompt("Select Rock, Paper, or Scissors" , "Rock")
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("Your Score: " + playerScore);
-        console.log("Computer's Score: " + compScore);
-    }
-    console.log(evaluateEndgame(playerScore, compScore));
-}
+const buttons = document.querySelectorAll('button');
+
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, computerPlay()));
+        console.log(playerScore);
+        console.log(compScore);
+    }); 
+});
+    
+
 
 let playerScore = 0;
 let compScore = 0;    
-//game(5);
