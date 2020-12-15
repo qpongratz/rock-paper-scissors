@@ -16,19 +16,8 @@ function computerPlay(){
     return (selection);
 }
 
-//Makes the player input conform to the same upper and lower cases
-//that I chose for the computerPlay outputs. Could just make computer
-//all uppercase since the strings for win and lose are hard-coded now. 
-function processString(str){
-    firstLetter = str.charAt(0)
-    return (firstLetter.toUpperCase() + str.slice(1).toLowerCase());
-}
-
 //Compares selections to output a result and modify scores.
 function playRound(playerSelection, computerSelection){
-    //playerSelection = processString(playerSelection);
-    console.log(playerSelection);
-    console.log(computerSelection);
     if (playerSelection === computerSelection){
         return `Tie! You both selected ${playerSelection}.`
     }
@@ -86,11 +75,9 @@ const playerScoreDiv = document.querySelector('#playerScore');
 const compScoreDiv = document.querySelector('#compScore');
 const resultsDiv = document.querySelector('.results');
 
-updateScore();
+updateDisplayedScore();
 
-
-
-function updateScore() {
+function updateDisplayedScore() {
     playerScoreDiv.textContent = `Your Score: ${playerScore}`;
     compScoreDiv.textContent = `Computer's Score: ${compScore}`;
 }
@@ -100,7 +87,7 @@ function updateScore() {
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         resultsDiv.textContent = (playRound(button.id, computerPlay()));
-        updateScore();
+        updateDisplayedScore();
     }); 
 });
     
