@@ -60,12 +60,14 @@ function playRound(playerSelection, computerSelection){
 
 let playerScore = 0;
 let compScore = 0;
+let round = 0;
 
 const buttons = document.querySelectorAll('button');
 const playerScoreDiv = document.querySelector('#playerScore');
 const compScoreDiv = document.querySelector('#compScore');
 const resultsDiv = document.querySelector('.results');
 const endgame = document.querySelector('.endgame');
+const rounds = document.querySelector('.rounds');
 
 updateDisplayedScore();
 
@@ -84,15 +86,23 @@ function evaluateEndgame(){
     }
 }
 
-
+function updateRoundHistory(playerChoice, compChoice){
+    let newRound = document.createElement('li');
+    newRound.style.listStyle = 'none';
+    newRound.textContent = `Round ${round}: ${playerChoice} vs. ${compChoice}`;
+    rounds.insertBefore(newRound, rounds.firstChild);
+}
 
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (playerScore < 5 && compScore < 5) {
-            resultsDiv.textContent = (playRound(button.id, computerPlay()));
+            computersChoice = computerPlay();
+            resultsDiv.textContent = (playRound(button.id, computersChoice));
             updateDisplayedScore();
             evaluateEndgame();
+            round++
+            updateRoundHistory(button.id, computersChoice);
         }        
     }); 
 });
