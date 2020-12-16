@@ -13,3 +13,12 @@ Learned:
     More familiarity with Javascript code.
 
 Updated Goal: Learn how to maniplulate the html with javascript by creating a front end to actually play Rock-Paper-Scissors not in the console.
+
+Learned:
+    Intro to manipulating the dom with javascript
+    
+    How to and to not pass variables through different functions
+
+    More familiarity with javascript, css, html in general.
+
+    Focused on learning more about display: grid with this project.
