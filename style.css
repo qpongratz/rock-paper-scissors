@@ -1,39 +1,89 @@
+
+body, div, button{
+    background-color: #f4efdc;
+}
+.gameRules, button, div{
+    font-family: 'Reenie Beanie' , cursive;
+    font-size: large;
+}
+h1{
+    text-align: center;
+    font-family: 'Homemade Apple', cursive;
+    font-weight: lighter;
+}
 .game {
     min-width: 300px;
     max-width: 600px;
     height: 300px;
-    background-color: gray;
-    margin: 100px auto auto auto;
+    background-color: #f4efdc;
+    margin: 10px auto auto auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
 }
-.quartz { 
-    color: blue;
+ul{
+    text-align: left;
+    list-style: inside;
+}
+.gameRules{
+    font-family: 'Reenie Beanie' , cursive;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    max-width: 620px;
+    min-width: 300px;
+}
+.list{
+    width: 350px;
+    margin: auto;
+}
+.endgame{
+    padding-top: 20px;
+    text-align: center;
+    font-size: x-large;
+}
+.images{
+    align-self: end;
+}
+#quartzImage { 
+    min-width: 100px;
+    max-width: 180px;
+}
+#parchmentImage { 
+    min-width: 100px;
+    max-width: 220px;
+}
+#shearsImage { 
+    min-width: 150px;
+    max-width: 250px;
 }
 .button{
     width: 100px;
     grid-row: 2;
 }
 button {
+    font-family: 'Reenie Beanie' , cursive;
+    font-size: large;
     width: 100px;
     height: 50px;
-    background-color: red;
-
+}
+.score{
+    font-size: x-large;
 }
 #playerScore {
-    background-color: white;
     grid-row: 3;
     grid-column: 1;
 }
 #compScore{
-    background-color: white;
     grid-row: 3;
     grid-column: 3;
 }
 .results{
-    background-color: white;
-    grid-area: 4 / 2 / 4 / 3;
+    font-size: x-large;
+    grid-row: 4;
+    grid-column: 2 / span 3;
+    justify-self: start;
+    
 }

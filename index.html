@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <head>
     <title>Quartz Parchment Shears</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
 </head>
 <link rel="stylesheet" href="style.css">
+<div>
+    <h1>Quartz, Parchment, Shears</h1>
+    <div class="gameRules">
+        <p>Step right up and try your hand at a game passed down from my grandmother.
+            It's quite simple. Merely select one of these instruments below and win or lose
+            based on a few basic rules.
+            <div class="list">
+                <ul>
+                    <li>Quartz (fig. 1) beats Shears (fig. 3)</li>
+                    <li>Parchment (fig. 2) beats Quartz (fig. 1)</li>
+                    <li>Shears (fig. 3) beats Parchment (fig. 2)</li>
+                </ul>
+            </div>
+            The twist is that this here version is played against a robot. First to five points wins. Good Luck!
+        </p>
+    </div>
+    <div class = "endgame"></div>
+</div>
 
 <div class = "game">
+    <div class="images"><img id="quartzImage" src="images/quartz.jpg"></div>
+    <div class="images"><img id="parchmentImage" src="images/parchment.jpg"></div>
+    <div class="images"><img id="shearsImage" src="images/shears.jpg"></div>
     <div class = "button">
         <button id = "Quartz">Quartz</button>
     </div>
@@ -17,6 +42,6 @@
     <div class = "score" id = "playerScore"></div>
     <div class = "score" id = "compScore"></div>
     <div class = "results"></div>
-    <div class = "endgame"></div>
+    
 </div>
 <script type="text/javascript" src="script.js"></script>

@@ -76,9 +76,9 @@ function updateDisplayedScore() {
 
 function evaluateEndgame(){
     if (playerScore >= 5){
-        endgame.textContent = "You've won the game! Reload to prove this wasn't a fluke.";
+        endgame.textContent = "Good show, good show. You've bested the robot and proven yourself.";
     }else if (compScore >= 5){
-        endgame.textContent = "You've lost the game. Reload to salvage your dignity."
+        endgame.textContent = "Oooh, too bad. Though for just a dime you can have another go."
     }else{
         return;
     }
