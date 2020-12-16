@@ -42,7 +42,7 @@ ul{
 .endgame{
     padding-top: 20px;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
 }
 .images{
     align-self: end;
@@ -81,9 +81,10 @@ button {
     grid-column: 3;
 }
 .results{
-    font-size: x-large;
+    font-size: xx-large;
+    grid-column-start: 1;
+    grid-column-end: 4;
     grid-row: 4;
-    grid-column: 2 / span 3;
-    justify-self: start;
+    justify-self: center;
     
 }

@@ -85,6 +85,8 @@ function evaluateEndgame(){
 }
 
 
+
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (playerScore < 5 && compScore < 5) {
