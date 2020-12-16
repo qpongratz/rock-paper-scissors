@@ -4,13 +4,13 @@ function computerPlay(){
     rnd = Math.floor(Math.random()*3);
     switch (rnd){
         case 0:
-            selection = "Rock";
+            selection = "Quartz";
             break;
         case 1:
-            selection = "Paper";
+            selection = "Parchment";
             break;
         case 2: 
-            selection = "Scissors";
+            selection = "Shears";
             break; 
     }
     return (selection);
@@ -22,32 +22,32 @@ function playRound(playerSelection, computerSelection){
         return `Tie! You both selected ${playerSelection}.`
     }
     switch (playerSelection){
-        case "Rock":
-            if (computerSelection === "Paper"){
-                result = "You Lose! Paper covers Rock.";
+        case "Quartz":
+            if (computerSelection === "Parchment"){
+                result = "You Lose! Parchment covers Quartz.";
                 compScore +=1;
             }else{
-                result = "You Win! Rock smashes Scissors."
+                result = "You Win! Quartz smashes Shears."
                 playerScore += 1;
             }
             return result
             break;
-        case "Paper":
-            if (computerSelection === "Scissors"){
-                result = "You Lose! Scissors cut Paper.";
+        case "Parchment":
+            if (computerSelection === "Shears"){
+                result = "You Lose! Shears cut Parchment.";
                 compScore +=1;
             }else{
-                result = "You Win! Paper covers Rock."
+                result = "You Win! Parchment covers Quartz."
                 playerScore += 1;
             }
             return result
             break;
-        case "Scissors":
-            if (computerSelection === "Rock"){
-                result = "You Lose! Rock smashes Scissors.";
+        case "Shears":
+            if (computerSelection === "Quartz"){
+                result = "You Lose! Quartz smashes Shears.";
                 compScore +=1;
             }else{
-                result = "You Win! Scissors cut Paper."
+                result = "You Win! Shears cut Parchment."
                 playerScore += 1;
             }
             return result

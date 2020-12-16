@@ -10,7 +10,7 @@
     justify-items: center;
     align-items: center;
 }
-.rock { 
+.quartz { 
     color: blue;
 }
 .button{
@@ -21,9 +21,6 @@ button {
     width: 100px;
     height: 50px;
     background-color: red;
-
-}
-.score{
 
 }
 #playerScore {
